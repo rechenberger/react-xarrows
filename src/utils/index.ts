@@ -1,4 +1,4 @@
-import {refType} from "./index";
+import { refType } from "../index";
 
 type extendedJtypes =
     | "string"

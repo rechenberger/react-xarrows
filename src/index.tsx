@@ -1,22 +1,22 @@
 //// @ts-nocheck
 
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import isEqual from "lodash.isequal";
 import pick from "lodash.pick";
-import { getElementByPropGiven, typeOf } from "./utils";
 import PropTypes from "prop-types";
-import { buzzierMinSols, bzFunction } from "./utils/buzzier";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { getElementByPropGiven } from "./utils";
 import { getShortestLine, prepareAnchorLines } from "./utils/anchors";
+import { buzzierMinSols, bzFunction } from "./utils/buzzier";
 
 ///////////////
 // public types
 
 export type xarrowPropsType = {
-  start: refType;
-  end: refType;
-  startAnchor?: anchorType | anchorType[];
-  endAnchor?: anchorType | anchorType[];
-  label?: labelType | labelsType;
+  start: any;
+  end: any;
+  startAnchor?: any;
+  endAnchor?: any;
+  label?: any;
   color?: string;
   lineColor?: string | null;
   headColor?: string | null;
