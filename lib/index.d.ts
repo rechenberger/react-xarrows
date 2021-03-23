@@ -1,10 +1,10 @@
 import React from "react";
 export declare type xarrowPropsType = {
-    start: refType;
-    end: refType;
-    startAnchor?: anchorType | anchorType[];
-    endAnchor?: anchorType | anchorType[];
-    label?: labelType | labelsType;
+    start: any;
+    end: any;
+    startAnchor?: any;
+    endAnchor?: any;
+    label?: any;
     color?: string;
     lineColor?: string | null;
     headColor?: string | null;
