@@ -37,6 +37,7 @@ export type xarrowPropsType = {
   arrowBodyProps?: React.SVGProps<SVGPathElement>;
   arrowHeadProps?: React.SVGProps<SVGPathElement>;
   divContainerProps?: React.HTMLProps<HTMLDivElement>;
+  middleLabelFactor?: number
 };
 
 export type anchorType = anchorPositionType | anchorCustomPositionType;
@@ -104,6 +105,7 @@ const Xarrow: React.FC<xarrowPropsType> = (props: xarrowPropsType) => {
     arrowHeadProps,
     divContainerProps,
     extendSVGcanvas,
+    middleLabelFactor = 0.5,
     ...extraProps
   } = props;
 
@@ -490,7 +492,7 @@ const Xarrow: React.FC<xarrowPropsType> = (props: xarrowPropsType) => {
     const bzx = bzFunction(x1, cpx1, cpx2, x2);
     const bzy = bzFunction(y1, cpy1, cpy2, y2);
     const labelStartPos = { x: bzx(0.01), y: bzy(0.01) };
-    const labelMiddlePos = { x: bzx(0.5), y: bzy(0.5) };
+    const labelMiddlePos = { x: bzx(middleLabelFactor), y: bzy(middleLabelFactor) };
     const labelEndPos = { x: bzx(0.99), y: bzy(0.99) };
     const arrowEnd = { x: bzx(1), y: bzy(1) };
 

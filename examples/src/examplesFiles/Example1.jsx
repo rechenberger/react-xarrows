@@ -50,6 +50,7 @@ const Example1 = () => {
       start: "box2",
       end: "box3",
       color: "red",
+      middleLabelFactor: 0.3,
       label: {
         middle: (
           <div
