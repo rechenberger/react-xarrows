@@ -39,6 +39,7 @@ export type xarrowPropsType = {
   arrowHeadProps?: React.SVGProps<SVGPathElement>;
   divContainerProps?: React.HTMLProps<HTMLDivElement>;
   middleLabelFactor?: number
+  middleLabelEasingDivider?: number
 };
 
 export type anchorType = anchorPositionType | anchorCustomPositionType;
@@ -107,6 +108,7 @@ const Xarrow: React.FC<xarrowPropsType> = (props: xarrowPropsType) => {
     divContainerProps,
     extendSVGcanvas,
     middleLabelFactor = 0.5,
+    middleLabelEasingDivider = 1,
     ...extraProps
   } = props;
 
@@ -491,7 +493,7 @@ const Xarrow: React.FC<xarrowPropsType> = (props: xarrowPropsType) => {
 
     // MiddleLabelFactor Easing
     const absoluteDifDiff = Math.abs(absDx - absDy) / ((absDx + absDy) || 1)
-    const highIfDiffHigh = absoluteDifDiff / 2
+    const highIfDiffHigh = absoluteDifDiff / middleLabelEasingDivider
     const middleLabelFactorEasing = BezierEasing(0 + highIfDiffHigh, 0 , 1 - highIfDiffHigh, 1);
     // const middleLabelFactorEasing = bzFunction(0 + highIfDiffHigh, 0 , 1 - highIfDiffHigh, 1);
     middleLabelFactor = middleLabelFactorEasing(middleLabelFactor);

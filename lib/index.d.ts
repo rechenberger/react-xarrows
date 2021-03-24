@@ -24,6 +24,7 @@ export declare type xarrowPropsType = {
     arrowHeadProps?: React.SVGProps<SVGPathElement>;
     divContainerProps?: React.HTMLProps<HTMLDivElement>;
     middleLabelFactor?: number;
+    middleLabelEasingDivider?: number;
 };
 export declare type anchorType = anchorPositionType | anchorCustomPositionType;
 export declare type anchorPositionType = "middle" | "left" | "right" | "top" | "bottom" | "auto";
