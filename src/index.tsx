@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { getElementByPropGiven } from "./utils";
 import { getShortestLine, prepareAnchorLines } from "./utils/anchors";
+import BezierEasing from "./utils/BezierEasing";
 import { buzzierMinSols, bzFunction } from "./utils/buzzier";
 
 ///////////////
@@ -490,9 +491,9 @@ const Xarrow: React.FC<xarrowPropsType> = (props: xarrowPropsType) => {
 
     // MiddleLabelFactor Easing
     const absoluteDifDiff = Math.abs(absDx - absDy) / ((absDx + absDy) || 1)
-    const highIfDiffHigh = absoluteDifDiff / 2
-    console.log({highIfDiffHigh})
-    const middleLabelFactorEasing = bzFunction(0 + highIfDiffHigh, 0 , 1 - highIfDiffHigh, 1);
+    const highIfDiffHigh = absoluteDifDiff
+    const middleLabelFactorEasing = BezierEasing(0 + highIfDiffHigh, 0 , 1 - highIfDiffHigh, 1);
+    // const middleLabelFactorEasing = bzFunction(0 + highIfDiffHigh, 0 , 1 - highIfDiffHigh, 1);
     middleLabelFactor = middleLabelFactorEasing(middleLabelFactor);
 
     //labels
