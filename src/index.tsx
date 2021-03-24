@@ -490,7 +490,8 @@ const Xarrow: React.FC<xarrowPropsType> = (props: xarrowPropsType) => {
 
     // MiddleLabelFactor Easing
     const absoluteDifDiff = Math.abs(absDx - absDy) / ((absDx + absDy) || 1)
-    const highIfDiffHigh = absoluteDifDiff
+    const highIfDiffHigh = absoluteDifDiff / 2
+    console.log({highIfDiffHigh})
     const middleLabelFactorEasing = bzFunction(0 + highIfDiffHigh, 0 , 1 - highIfDiffHigh, 1);
     middleLabelFactor = middleLabelFactorEasing(middleLabelFactor);
 
